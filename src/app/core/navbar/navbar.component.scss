@@ -1,0 +1,40 @@
+.example-spacer {
+  flex: 1 auto;
+}
+
+.container {
+  display: flex;
+}
+
+.container-padding {
+  padding: 0 20px;
+}
+
+.mouse-hover {
+  color: white;
+  text-decoration: unset;
+  cursor: pointer;
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+  container {
+    display: flex;
+    flex-direction: column;
+  }
+  .example-spacer {
+    flex: 1 0 auto;
+  }
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (min-width: 768px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
