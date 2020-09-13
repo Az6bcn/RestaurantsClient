@@ -1,1 +1,44 @@
-<p>login works!</p>
+<div class="container">
+  <mat-card
+    class="card "
+    appearance="fill"
+  >
+    <form
+      class=" example-form flex-container"
+      [formGroup]="loginFG"
+    >
+      <mat-form-field class="flex-container">
+        <mat-label>Username</mat-label>
+        <input
+          matInput
+          formControlName='username'
+        >
+      </mat-form-field>
+
+      <mat-form-field class=" flex-container">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          type='password'
+          formControlName='password'
+        >
+      </mat-form-field>
+    </form>
+
+    <div class="example-button-row btn-container">
+      <div class="btn-container">
+        <button
+          mat-button
+          mat-raised-button
+          color="accent"
+        >Cancel</button>
+
+        <button
+          mat-button
+          mat-raised-button
+          color="primary"
+        >Login</button>
+      </div>
+    </div>
+  </mat-card>
+</div>

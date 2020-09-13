@@ -1,0 +1,91 @@
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex: 0 0 100%;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 64px);
+  background-image: linear-gradient(
+    to right top,
+    #cc6bd1,
+    #bd5ad1,
+    #ac49d1,
+    #973ad3,
+    #7e2bd5,
+    #ac15c3,
+    #cc00b0,
+    #e3009d,
+    #ff3d76,
+    #ff7857,
+    #ffad4b,
+    #fbdc5f
+  );
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.card {
+  max-width: 300px;
+  //margin: 10em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-item {
+  display: flex;
+}
+
+section {
+  display: table;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  width: 490px;
+}
+
+.example-button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}

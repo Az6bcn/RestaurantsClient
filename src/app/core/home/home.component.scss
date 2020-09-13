@@ -8,4 +8,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: calc(100vh - 64px);
+  background-image: linear-gradient(
+    to right top,
+    #cc6bd1,
+    #bd5ad1,
+    #ac49d1,
+    #973ad3,
+    #7e2bd5,
+    #ac15c3,
+    #cc00b0,
+    #e3009d,
+    #ff3d76,
+    #ff7857,
+    #ffad4b,
+    #fbdc5f
+  );
 }
