@@ -1,3 +1,4 @@
+import { AuthService } from './services/auth.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // Modules
@@ -34,6 +35,9 @@ import { LoginComponent } from './login/login.component';
     ReactiveFormsModule,
     MatInputModule,
     MatButtonModule
+  ],
+  providers: [
+    AuthService
   ],
   exports: [
     NavbarComponent,
