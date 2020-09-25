@@ -14,7 +14,7 @@ export const environment = {
     client_id: 'restaurantAngularClient',
     redirect_uri: 'http://localhost:4200/signin-oidc-callback',
     post_logout_redirect_uri: 'http://localhost:4200',
-    response_type: 'id_token token',
+    response_type: 'code',
     scope: 'openid profile restaurantAPI.fullaccess',
     accessTokenExpiringNotification: 5,
     loadUserinfo: true

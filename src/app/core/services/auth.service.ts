@@ -5,6 +5,7 @@ import { environment } from './../../../environments/environment';
 import { Injectable } from '@angular/core';
 import { UserManager, WebStorageStateStore, User } from 'oidc-client';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ import { HttpClient } from '@angular/common/http';
 export class AuthService {
 
   private oidc_settings = environment.oidc_settings as UserManagerSettings;
+  private returnURL$ = new BehaviorSubject<string>(void 0);
 
   private userManager: UserManager = new UserManager({
     ...this.oidc_settings,
@@ -19,7 +21,13 @@ export class AuthService {
   });
   constructor(
     private http: HttpClient,
-    private userService: UserService) { }
+    private userService: UserService) {
+
+    console.log({
+      ...this.oidc_settings,
+      userStore: new WebStorageStateStore({ store: window.localStorage })
+    });
+  }
 
   /**
    * Redirect user to IdentityServer log-in page.
@@ -36,8 +44,9 @@ export class AuthService {
    */
   async processAuthorisationResponse(): Promise<void> {
     const authenticatedUser = await this.userManager.signinRedirectCallback();
-
+    console.log('authenticatedUser', authenticatedUser);
     if (authenticatedUser) {
+      console.log('authenticated user', authenticatedUser);
       // const user = {
       //   fullname: authenticatedUser.
       // } as AuthenticatedUser;
@@ -52,6 +61,12 @@ export class AuthService {
 
   }
 
+  setReturnURL(url: string): void {
+    this.returnURL$.next(url);
+  }
 
+  getReturnURL(): BehaviorSubject<string> {
+    return this.returnURL$;
+  }
 
 }
